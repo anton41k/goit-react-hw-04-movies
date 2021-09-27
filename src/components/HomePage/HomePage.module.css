@@ -1,0 +1,27 @@
+.movie_list {
+  display: grid;
+  max-width: calc(100vw - 224px);
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+  padding: 70px 0 0;
+  list-style: none;
+  margin: 0px auto;
+}
+
+.movie_card {
+  transition: transform var(--animation-duration) var(--timing-function);
+  background-color: rgba(94, 89, 89, 0.5);
+  max-width: 316px;
+  height: 450px;
+}
+
+.movie_card:hover {
+  transform: scale(1.03);
+  background-color: rgba(94, 89, 89);
+}
+
+.movie_img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
