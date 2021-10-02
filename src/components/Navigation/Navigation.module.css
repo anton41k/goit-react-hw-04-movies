@@ -3,10 +3,14 @@
   text-decoration: none;
   padding: 12px;
   font-weight: 500;
-  color: #2a363b;
+  color: var(--color-gray);
   font-size: 18px;
 }
 
 .navLink_active {
-  color: #2196f3;
+  color: var(--color-blue);
+}
+
+.navLink:hover {
+  color: var(--color-blue);
 }

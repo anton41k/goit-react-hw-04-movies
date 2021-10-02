@@ -1,0 +1,33 @@
+.button {
+  display: inline-block;
+  padding: 5px 10px;
+  background: var(--color-blue1);
+  color: var(--color-gray);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.form_input {
+  width: 250px;
+  color: var(--color-white);
+  padding: 0 10px;
+  line-height: 30px;
+  background: var(--color-blue1);
+  border-width: 0;
+  border-radius: 2px;
+  margin-right: 15px;
+  border: none;
+  outline: none;
+}
+
+.form_input::placeholder {
+  color: var(--color-white);
+}
+
+.button:hover {
+  background: var(--color-blue);
+  color: var(--color-white);
+}

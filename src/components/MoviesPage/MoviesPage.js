@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-//import css from "./MoviesPage.module.css";
+import css from "./MoviesPage.module.css";
 
 export default function Movies({ onSubmit }) {
   const [query, setQuery] = useState("");
@@ -19,6 +19,7 @@ export default function Movies({ onSubmit }) {
   return (
     <form onSubmit={handleSubmit}>
       <input
+        className={css.form_input}
         type="text"
         autoComplete="off"
         autoFocus
@@ -27,7 +28,9 @@ export default function Movies({ onSubmit }) {
         onChange={handleChange}
       />
 
-      <button type="submit">Search</button>
+      <button className={css.button} type="submit">
+        SEARCH
+      </button>
     </form>
   );
 }

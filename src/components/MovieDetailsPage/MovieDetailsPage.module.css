@@ -1,3 +1,69 @@
-.container_movie {
-  border: 1px solid red;
+.container_info {
+  display: flex;
+  padding: 10px 0;
+}
+
+.img_movie {
+  padding-right: 20px;
+  width: 520px;
+  height: 750px;
+}
+
+.info_title {
+  font-size: 30px;
+  font-weight: 800;
+  padding-left: 20px;
+}
+
+.info_item {
+  max-width: 600px;
+  display: flex;
+  padding-bottom: 4px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.info_name {
+  color: var(--color-gray1);
+  width: 250px;
+  display: block;
+}
+
+.info_gescr {
+  color: var(--color-gray);
+  width: 200px;
+}
+
+.info_navLink {
+  padding-bottom: 4px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-gray);
+}
+
+.info_navLink:hover {
+  color: var(--color-blue1);
+}
+
+.info_navLink_active {
+  color: var(--color-blue);
+}
+
+.info_plus {
+  padding-left: 30px;
+}
+
+.info_about {
+  color: var(--color-gray1);
+  display: block;
+}
+
+.info_about_gescr {
+  color: var(--color-gray);
+}
+
+.item_about {
+  padding-bottom: 4px;
+  font-size: 16px;
+  font-weight: 700;
 }

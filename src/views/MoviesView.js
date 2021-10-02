@@ -50,7 +50,13 @@ export default function MoviesView() {
   return (
     <>
       <MoviesPage onSubmit={onChangeQuery} />
-      {search !== dataQuery && <HomePage data={dataQuery} />}
+      {search !== dataQuery && (
+        <HomePage
+          key={"2hgf51616"}
+          data={dataQuery}
+          btnBack_text={"Back to search"}
+        />
+      )}
     </>
   );
 }

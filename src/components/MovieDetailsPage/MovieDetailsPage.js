@@ -15,45 +15,71 @@ export default function MovieDetailsPage({ isError, movie }) {
     <>
       {isError && <NotFoundView />}
       {movie && (
-        <div>
+        <div className={css.container_info}>
           <img
-            className={css.container_movie}
+            className={css.img_movie}
             src={`${urlImg}${movie.poster_path}`}
             alt={movie.original_title}
           />
           <div>
-            <h2>{movie.title}</h2>
-            <ul>
-              <li key={infoId()}>
-                <span>Vote / Votes</span>
-                <span>{`${movie.vote_average} / ${movie.vote_count}`}</span>
+            <h2 className={css.info_title}>{movie.title}</h2>
+            <hr />
+            <ul className={css.info_list}>
+              <li key={infoId()} className={css.info_item}>
+                <span className={css.info_name}>Vote / Votes</span>
+                <span
+                  className={css.info_gescr}
+                >{`${movie.vote_average} / ${movie.vote_count}`}</span>
               </li>
-              <li key={infoId()}>
-                <span>Popularity</span>
-                <span>{movie.popularity}</span>
+              <li key={infoId()} className={css.info_item}>
+                <span className={css.info_name}>Popularity</span>
+                <span className={css.info_gescr}>{movie.popularity}</span>
               </li>
-              <li key={infoId()}>
-                <span>Original Title</span>
-                <span>{movie.original_title}</span>
+              <li key={infoId()} className={css.info_item}>
+                <span className={css.info_name}>Original Title</span>
+                <span className={css.info_gescr}>{movie.original_title}</span>
               </li>
-              <li key={infoId()}>
-                <span>Genre</span>
-                <ul>
+              <li key={infoId()} className={css.info_item}>
+                <span className={css.info_name}>Genre</span>
+                <div className={css.genre_list}>
                   {movie.genres &&
                     movie.genres.map((genre) => (
-                      <li key={infoId()}>{genre.name}</li>
+                      <span
+                        key={infoId()}
+                        className={`${css.info_gescr} ${css.genre_item}`}
+                      >{`${genre.name}, `}</span>
                     ))}
-                </ul>
+                </div>
               </li>
               <li key={infoId()}>
-                <NavLink to={`${url}/credits`}>Cast:</NavLink>
+                <hr />
+                <span className={css.info_plus}>
+                  <NavLink
+                    to={`${url}/credits`}
+                    className={css.info_navLink}
+                    activeClassName={css.info_navLink_active}
+                  >
+                    Cast
+                  </NavLink>
+                </span>
+                <span className={css.info_plus}>
+                  <NavLink
+                    to={`${url}/reviews`}
+                    className={css.info_navLink}
+                    activeClassName={css.info_navLink_active}
+                  >
+                    Reviews
+                  </NavLink>
+                </span>
+                <hr />
               </li>
-              <li key={infoId()}>
-                <NavLink to={`${url}/reviews`}>Reviews:</NavLink>
-              </li>
-              <li key={infoId()}>
-                <span>ABOUT</span>
-                <span>{movie.overview}</span>
+              <li key={infoId()} className={css.item_about}>
+                {movie.overview && (
+                  <>
+                    <p className={css.info_about}>ABOUT</p>
+                    <p className={css.info_about_gescr}>{movie.overview}</p>
+                  </>
+                )}
               </li>
             </ul>
             <Route path={`${path}/credits`}>

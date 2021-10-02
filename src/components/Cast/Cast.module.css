@@ -1,0 +1,32 @@
+.cast_list {
+  display: grid;
+  max-width: calc(40vw);
+  grid-template-columns: repeat(auto-fill, minmax(100px, 5fr));
+  row-gap: 30px;
+  column-gap: 5px;
+  padding: 5px 0 5px;
+  list-style: none;
+  margin: 0px auto;
+}
+
+.cast_item {
+  transition: transform var(--animation-duration) var(--timing-function);
+  background-color: rgba(94, 89, 89, 0.5);
+  max-width: 100px;
+  height: 150px;
+}
+
+.cast_img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.cast_name {
+  color: var(--color-gray);
+  font-size: 12px;
+  font-weight: 400;
+  text-align: center;
+  margin: 0;
+}

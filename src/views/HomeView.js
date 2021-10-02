@@ -9,6 +9,5 @@ export default function HomeView() {
     movieShelAPI.fetchHome().then(({ results }) => setTrending(results));
   }, [setTrending]);
 
-  console.log("trending ", trending);
-  return <HomePage data={trending} />;
+  return <HomePage data={trending} btnBack_text={"Back to home"} />;
 }

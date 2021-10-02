@@ -1,6 +1,10 @@
 :root {
-  --color-text: bisque;
-  --color-bgc: rgb(80, 81, 88);
+  --color-blue: #2196f3;
+  --color-gray: #2a363b;
+  --color-blue1: #0647fca2;
+  --color-white: white;
+  --color-gray1: #292e308e;
+
   --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   --animation-duration: 250ms;
 }
