@@ -1,4 +1,4 @@
-import { NavLink, Route, useRouteMatch } from "react-router-dom";
+import { NavLink, Route, useRouteMatch, Switch } from "react-router-dom";
 import uuid from "react-uuid";
 import NotFoundView from "../../views/NotFoundView";
 import CastView from "../../views/CastView";
@@ -82,12 +82,14 @@ export default function MovieDetailsPage({ isError, movie }) {
                 )}
               </li>
             </ul>
-            <Route path={`${path}/credits`}>
-              <CastView />
-            </Route>
-            <Route path={`${path}/reviews`}>
-              <Reviews />
-            </Route>
+            <Switch>
+              <Route path={`${path}/credits`}>
+                <CastView />
+              </Route>
+              <Route path={`${path}/reviews`}>
+                <Reviews />
+              </Route>
+            </Switch>
           </div>
         </div>
       )}
