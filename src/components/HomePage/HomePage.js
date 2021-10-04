@@ -11,7 +11,7 @@ export default function HomeView({ data, btnBack_text }) {
       {data &&
         data.map((movie) => (
           <Fragment key={movie.id}>
-            {!movie.adult === false && movie.poster_path && (
+            {movie.adult === false && movie.poster_path && (
               <li className={css.movie_card}>
                 <Link
                   to={{
