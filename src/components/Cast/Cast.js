@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import css from "./Cast.module.css";
 
 const urlImg = "https://image.tmdb.org/t/p/w200";
@@ -9,9 +10,9 @@ export default function Cast({ cast, isError }) {
       <ul className={css.cast_list}>
         {cast && !isError && cast.cast.length
           ? cast.cast.map((data) => (
-              <>
+              <Fragment key={data.id}>
                 {data.profile_path && (
-                  <li key={data.id} className={css.cast_item}>
+                  <li className={css.cast_item}>
                     <>
                       <img
                         className={css.cast_img}
@@ -23,7 +24,7 @@ export default function Cast({ cast, isError }) {
                     </>
                   </li>
                 )}
-              </>
+              </Fragment>
             ))
           : cast && (
               <li>

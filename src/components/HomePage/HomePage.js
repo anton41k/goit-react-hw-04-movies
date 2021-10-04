@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { Link, useLocation } from "react-router-dom";
 import css from "./HomePage.module.css";
 
@@ -9,9 +10,9 @@ export default function HomeView({ data, btnBack_text }) {
     <ul className={css.movie_list}>
       {data &&
         data.map((movie) => (
-          <>
-            {movie.adult === false && movie.poster_path && (
-              <li key={movie.id} className={css.movie_card}>
+          <Fragment key={movie.id}>
+            {!movie.adult === false && movie.poster_path && (
+              <li className={css.movie_card}>
                 <Link
                   to={{
                     pathname: `/movies/${movie.id}`,
@@ -31,7 +32,7 @@ export default function HomeView({ data, btnBack_text }) {
                 </Link>
               </li>
             )}
-          </>
+          </Fragment>
         ))}
     </ul>
   );
